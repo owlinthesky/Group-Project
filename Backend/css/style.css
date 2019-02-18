@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+}
+
+.middle {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    background-color: #fff; 
+}
+
+.footer {
+    padding-top 2.5%;
+    padding-bottom: 2.5%;
+    background-color: #26C281;
+}
+
+.bg-custom {
+    background-color: #26C281;
+}
