@@ -32,6 +32,10 @@ a {
   padding-bottom: 4rem;
 
 }
+.container-fluid{
+  padding-right: 220px;
+  padding-left: 220px;
+}
 .container p {
     font-size: 1.2rem;
     padding: 1.2rem 0;
@@ -158,6 +162,8 @@ header {
               #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
 
   -webkit-font-smoothing: antialiased;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 /* RESPONSIVE */
 @media only screen and (max-width: 898px) {
