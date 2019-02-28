@@ -20,6 +20,7 @@ window.onload = function(){
             });  
     })
     
+    
     $("button#submit").click(function (){
         var sid = $("#studentid").val();
         var pass = $("#password").val();
@@ -38,7 +39,7 @@ window.onload = function(){
                 success:function(response) {
                     if (response==1)
                         {
-                           msg = "Found";
+                           window.location.href = "https://barnumdesigns.xyz/uni/index.php";
                         }
                     else 
                         {
@@ -54,4 +55,67 @@ window.onload = function(){
             return false;
         });
     });
+    
+    
+        $("button#CreateSub").click(function (){
+        var sid = $("#studentid2").val();
+        var pass = $("#password2").val();
+        var first = $("#firstname").val();
+        var last = $("#lastname").val();
+        var email = $("#email").val();
+        var course = $("#course").val();
+            
+        
+        if(sid==""||pass==""||first==""||last==""||email==""||course=="")
+            $("div#CreateAck").html("Please fill all the details");
+        else
+            $.ajax ({
+                type:'post',
+                url:'includes/createSQL.php',
+                data: {
+                    check: "check",
+                    studentid:sid,
+                    password:pass,
+                    firstname:first,
+                    lastname:last,
+                    email:email,
+                    course:course
+                },
+                success:function(response) {
+                    if (response==1)
+                        {
+                           msg = "Account created";
+                        }
+                    else 
+                        {
+                            msg = "OOF account failed to be created";
+                        }
+                    $("#CreateAck").html(msg);
+                },
+            });
+        $("#myCreate ").submit( function(){
+            return false;
+        });
+    });
+    
+    $("button#logout").click(function (){
+        $.ajax ({
+            type:'post',
+            url:'includes/logout.php',
+            success:function(response) {
+                window.location.href = "https://barnumdesigns.xyz/uni/login.php";
+            }
+        }) 
+    });
+    
+    function LikePost(P_id) {
+        $.ajax ({
+            type: 'post',
+            url: 'includes/like.php',
+            data: {
+                check: "post",
+                id: P_id,  
+            }
+        });
+    }
 }

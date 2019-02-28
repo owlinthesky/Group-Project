@@ -1,15 +1,21 @@
+<?php
+    while ($mem = mysqli_fetch_object($result)) {
+        $posts[] = $mem;
+    }
+?>    
+
 <section class="middle">
     <div class="container mt-3">
         <h1>SwanHub</h1>
         
-            <?php
-                while ($mem = mysqli_fetch_assoc($result)):
-                        echo '<h2>'.$mem['P_Title'].'</h2>';
-                        echo '<p>'.$mem['P_description'].'</p>';
-                        echo '<a class="btn btn-small btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="'.$mem['P_id'].' ">View</a>';
-                endwhile;
-                $result->close();
-            ?>    
+        <?php foreach($posts as $post): ?>
+            <div>
+                <h3><?php echo $post->P_Title; ?></h3>
+                <p><?php echo $post->P_description; ?></p>
+                <button onclick="LikePost(<?php echo $post->P_id; ?>)">Like</button>
+            </div>
+        <?php endforeach; ?>
+        
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">

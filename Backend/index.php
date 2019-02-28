@@ -2,9 +2,22 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+session_start();
+
 require 'includes/db.php';
 
-$result = $mysqli->query("SELECT P_id, P_description, P_Title FROM posts");
+$result = $conn->query("SELECT posts.P_id, posts.P_description, posts.P_Title FROM posts");
+mysqli_close($conn);
+
+
+function redirect($url)
+{
+    $link = '<script type="text/javascript">';
+    $link .= 'window.location = "' . $url . '"';
+    $link .= '</script>';
+    
+    echo $link;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,11 +35,17 @@ $result = $mysqli->query("SELECT P_id, P_description, P_Title FROM posts");
     <link rel="stylesheet" href="css/style.css">
     <title>Marble Management Systems</title>
 </head>
-    
-    <?php
-    require 'content/header.php';
-    require 'content/login.php';
-    require 'content/footer.php';
-    ?>
+   <div class="site-container"> 
+       <div class="site-pusher">
+        <?php
+        require 'content/header.php';
+        if (isset($_SESSION["U_id"])) {
+            include 'content/body.php';
+        } else {
+            redirect("login.php");
+        }
+        ?>
+       </div>
+    </div>
 </body>
 </html> 
