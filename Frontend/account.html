@@ -18,7 +18,7 @@
         <header>
           <a href="#" class="icon" id="icon"></a>
           <nav class="menu">
-          <a href="#">
+          <a href="index.html">
           <img alt="logo" id="logo" src="assets/logo.png">
           </a>
           </nav>
@@ -28,51 +28,47 @@
             <a href="account.html"><i class="fas fa-user"></i></a>
           </div>
         </header>
-        <div class="container-fluid" style="margin-top:30px">
+        <div class="container-fluid profile">
           <div class="row">
-            <div class="col-sm-1" id="whitespace">
-            </div>
-
-            <div class="col-sm-6">
-                        <div class="row">
-                          <div class= "col-sm-4">
-                        <img src="assets/account1.jpg" class="rounded" width="290" height="auto" >
-                      </div>
-                    </div>
-                    <div class = "row" style= "margin:10px">
-                        <button type="button" class="btn btn-primary" style= "margin:10px">Edit</button>
-                        <button type="button" class="btn btn-primary" style= "margin:10px" >Friends</button>
-                          <button type="button" class="btn btn-primary" style= "margin:10px">Photos</button>
-                    </div>
-                  </div>
-
-            <div class="col-sm-2 links ">
-              <h3>Links</h3>
+            <div class="col-sm-2 links">
+              <img src="assets/account1.jpg" class="rounded profileimage" >
+              <!-- <div style= "margin:10px">
+                  <button type="button" class="btn btn-primary" style= "margin:10px">Edit</button>
+                  <button type="button" class="btn btn-primary" style= "margin:10px" >Friends</button>
+                    <button type="button" class="btn btn-primary" style= "margin:10px">Photos</button>
+              </div> -->
+              <div>
+              <h3>Ronald McDonald Trump</h3>
               <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
-                  <a class="nav-link" href="events.html">Events</a>
+                  <a class="nav-link" href="editprofile.html">Edit Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="courses.html">Course</a>
+                  <a class="nav-link" href="courses.html">Computer Science</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="socs.html">Societies</a>
+                  <a class="nav-link">Year 2</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="socs.html">Computer Science Society</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="friends.html">Friends</a>
                 </li>
               </ul>
               <hr class="d-sm-none">
+              </div>
             </div>
 
-            <div class="col-sm-6">
-          <div class= " PersonalPost">
-              <form action="" method="post">
-                  <textarea name="comment" cols="60" rows="6" placeholder="write comment here"></textarea><br>
-                    <input type="submit" class="btn btn-primary"value="comment">
-                    </form>
-                      <input type="file" name="fileToUpload" id="fileToUpload">
-                        <input type="submit" class="btn btn-primary" value="Upload Image" name="submit">
-                        </div>
-
-
+            <div class="col-sm-8">
+              <div class= "PersonalPost post">
+              <form action="" method="post" style="padding: 10px;">
+                <textarea name="comment" cols="155" rows="6" placeholder="Post something..."></textarea><br>
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" class="btn btn-primary" value="Upload Image" name="submit">
+                <input type="submit" class="btn btn-primary" value="Post" style="float:right">
+              </form>
+            </div>
               <div class="post">
                 <div class="userdetails">
                   <div class="accountimage">
@@ -139,8 +135,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-2" id="whitespace">
-            </div>
+            <!-- <div class="col-sm-2" id="whitespace">
+            </div> -->
           </div>
         </div>
         <div class="site-cache" id="site-cache"></div>

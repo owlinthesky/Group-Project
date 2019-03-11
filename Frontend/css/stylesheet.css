@@ -165,6 +165,17 @@ header {
   margin-left: -15px;
   margin-right: -15px;
 }
+.profileimage{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+}
+.profile{
+  margin-top:30px;
+  padding-right:0px;
+  padding-left: 0px; 
+}
 /* RESPONSIVE */
 @media only screen and (max-width: 898px) {
 
