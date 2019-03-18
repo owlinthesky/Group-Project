@@ -15,6 +15,7 @@ if ($PassRes->num_rows > 0)
     //echo $row['password']; 
     //$hashedPass = password_hash($, PASSWORD_DEFAULT);
      if(password_verify($pass, $row['password'])) {
+          $_SESSION['U_id'] = $row['U_id'];
          echo "1";
      } else {
          echo "0";

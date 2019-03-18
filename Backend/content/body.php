@@ -12,7 +12,8 @@
             <div>
                 <h3><?php echo $post->P_Title; ?></h3>
                 <p><?php echo $post->P_description; ?></p>
-                <button onclick="LikePost(<?php echo $post->P_id; ?>)">Like</button>
+                <button class="likeBtn" id="<?php echo $post->P_id; ?>">Like</button>
+                <button class="DisBtn" id="<?php echo $post->P_id; ?>">Dislike</button>
             </div>
         <?php endforeach; ?>
         

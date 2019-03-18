@@ -18,7 +18,7 @@ window.onload = function(){
                     console.log(err);
                 }
             });  
-    })
+    });
     
     
     $("button#submit").click(function (){
@@ -29,7 +29,7 @@ window.onload = function(){
             $("div#ack").html("Please enter username and password");
         else
             $.ajax ({
-                type:'post',
+                type:'POST',
                 url:'includes/check.php',
                 data: {
                     check: "check",
@@ -56,6 +56,49 @@ window.onload = function(){
         });
     });
     
+    $(".likeBtn").click(function (){
+        var obj = this.id;
+        var clsobj = this.className;
+        
+        $.ajax ({
+            type: 'POST',
+            url: 'includes/like.php',
+            data: {
+                check: clsobj,
+                P_id: obj
+            },
+            
+            success: function(data) {
+                console.log(data);
+            },
+             error: function (xhr, ajaxOptions, thrownError) {
+                   alert(xhr + " - " + ajaxOptions + " - " + thrownError);
+                 
+            },
+        });
+    });
+    
+     $(".DisBtn").click(function (){
+        var obj = this.id;
+        var clsobj = this.className;
+        
+        $.ajax ({
+            type: 'POST',
+            url: 'includes/like.php',
+            data: {
+                check: clsobj,
+                P_id: obj
+            },
+            
+            success: function(data) {
+                console.log(data);
+            },
+             error: function (xhr, ajaxOptions, thrownError) {
+                   alert(xhr + " - " + ajaxOptions + " - " + thrownError);
+                 
+            },
+        });
+    });
     
         $("button#CreateSub").click(function (){
         var sid = $("#studentid2").val();
@@ -107,15 +150,4 @@ window.onload = function(){
             }
         }) 
     });
-    
-    function LikePost(P_id) {
-        $.ajax ({
-            type: 'post',
-            url: 'includes/like.php',
-            data: {
-                check: "post",
-                id: P_id,  
-            }
-        });
-    }
 }

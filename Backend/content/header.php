@@ -12,7 +12,7 @@
             <?php
               if(isset($_SESSION["U_id"]))
               {
-                  echo '<button id="logout">Logout</button>"';
+                  echo '<button id="logout">Logout</button>';
               }
             ?>
           </div>
